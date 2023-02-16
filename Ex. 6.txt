@@ -1,0 +1,31 @@
+import 'package:flutter/cupertino.dart';
+
+class WidgetCupertino extends StatelessWidget {  
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoApp(
+      title: 'my app in cupertino',
+      home: CupertinoTabScaffold(
+        tabBar: CupertinoTabBar(
+          items: const <BottomNavigationBarItem> [
+            BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.battery_0),
+              label: 'battery'
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.alt),
+              label: 'alt'
+            ),
+          ],
+        ),
+        tabBuilder: (context, index) {
+          return const Center(child: Text('my home'),);
+        },
+      ),
+    );
+  } 
+}
+
+void main() {
+  runApp(WidgetCupertino());
+}
