@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'export_pages.dart';
+import 'package:ex_listview/model/export_model.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -13,7 +13,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   // variável
-
   final mock = MockModel();
 
   Container _container({required int index}) {
@@ -21,7 +20,7 @@ class _MyHomePageState extends State<MyHomePage> {
         height: 360,
         color: Colors.red[mock.colorCodes[index]],
         child: Padding(
-            padding: EdgeInsets.all(20.0),
+            padding: const EdgeInsets.all(20.0),
             child: Center(
               child: Text(mock.entries[index]),
             )
@@ -31,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   ListView _listView() {
     return ListView.builder(
-        padding: EdgeInsets.all(5.0),
+        padding: const EdgeInsets.all(5.0),
         itemCount: mock.entries.length,
         itemBuilder: (BuildContext context, int index) {
           return _container(index: index);

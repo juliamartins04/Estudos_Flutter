@@ -1,7 +1,5 @@
-import 'export_pages.dart';
 import 'package:flutter/material.dart';
-
-import 'model/export_number.dart';
+import 'package:ex_random_number_flutter/model/export_number.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -62,22 +60,22 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    print("init state");
+    debugPrint("init state");
   }
 
   @override
   void dispose() {
-    print("dispose");
+    debugPrint("dispose");
   }
 
-  int  _generateNumber() {
+  int _generateNumber() {
     return Number.generateRandomNumber();
   }
 
   _generateNewNumber() {
     setState(() {
       randomNumber = _generateNumber();
-      print("novo número:");
+      debugPrint("novo número:");
       _sendSnackBar();
     });
   }
